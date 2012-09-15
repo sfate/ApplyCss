@@ -35,13 +35,13 @@ window.onload = function () {
             element.nodes[i].removeAttribute("id");
           }
         }
-      }
+      };
       completeHTML = wrapper.innerHTML;
     },
     appear: function () {
       elements.outputArea.value = completeHTML;
     }
-  }
+  };
 
   elements.applyButton.onclick = function() {
     css.parse();
