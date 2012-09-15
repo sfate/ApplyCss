@@ -1,0 +1,13 @@
+#input, #output {
+  width:100%;
+}
+#input textarea {
+  width:48%;
+  margin-left:10px;
+  height:250px;
+}
+#output textarea {
+  width:100%;
+  height:350px;
+}
+
