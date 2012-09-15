@@ -9,7 +9,7 @@ window.onload = function () {
   };
   var css = {
     styleArray   : null,
-    completeHtml : null,
+    completeHTML : null,
 
     parse: function () {
       var style  = elements.inputArea.css.value;
@@ -19,7 +19,7 @@ window.onload = function () {
       }
     },
     apply: function () {
-      wrapper = document.createElement('div');
+      var wrapper = document.createElement('div');
       wrapper.innerHTML = elements.inputArea.html.value;
       for( i in styleArray ) {
         var currentElement = styleArray[i];
@@ -31,14 +31,15 @@ window.onload = function () {
           element.nodes = wrapper.querySelectorAll(element.selector);
           for ( var i=0;  i<element.nodes.length; i++ ) {
             element.nodes[i].setAttribute("style", element.style);
-            element.nodes[i].removeAttribute("class", "id");
+            element.nodes[i].removeAttribute("class");
+            element.nodes[i].removeAttribute("id");
           }
         }
       }
-      completeHtml = wrapper;
+      completeHTML = wrapper.innerHTML;
     },
     appear: function () {
-      elements.outputArea.value = wrapper.innerHTML;
+      elements.outputArea.value = completeHTML;
     }
   }
 
